@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "8b2e55e3-8468-4fa0-9953-bfd55e1117d3",
+		"name": "My NodeJs Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/products",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"price\": 200,\r\n    \"color\": \"white\",\r\n    \"type\": \"Dress Shirt\",\r\n    \"gender\": \"male\",\r\n    \"title\": \"enim in Lorem\",\r\n    \"company\": \"Dockers\",\r\n    \"about\": \"Et sit laboris duis irure minim aliquip sint ut aliqua velit consectetur magna nisi reprehenderit. Aute sunt dolore excepteur et adipisicing nostrud cillum sint eu amet voluptate in officia ut. Reprehenderit incididunt eu velit ea reprehenderit reprehenderit. Consequat esse fugiat occaecat est adipisicing exercitation. Laborum aliqua irure aliqua ipsum ut magna. Ad ea nulla ipsum quis consequat deserunt id.\\r\\n\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/products",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v1/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": 2,\r\n    \"price\": 2500,\r\n    \"color\": \"purple\",\r\n    \"type\": \"Suit\",\r\n    \"gender\": \"male\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/v1/products/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
