@@ -31,7 +31,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/products/1",
+					"raw": "localhost:5000/api/v1/products/5e7758990cfe4b52ec1f1daa",
 					"host": [
 						"localhost"
 					],
@@ -40,7 +40,7 @@
 						"api",
 						"v1",
 						"products",
-						"1"
+						"5e7758990cfe4b52ec1f1daa"
 					]
 				}
 			},
@@ -82,7 +82,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:5000/api/v1/products/1",
+					"raw": "localhost:5000/api/v1/products/5e7758990cfe4b52ec1f1daa",
 					"host": [
 						"localhost"
 					],
@@ -91,7 +91,7 @@
 						"api",
 						"v1",
 						"products",
-						"1"
+						"5e7758990cfe4b52ec1f1daa"
 					]
 				}
 			},
@@ -110,10 +110,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_id\": 2,\r\n    \"price\": 2500,\r\n    \"color\": \"purple\",\r\n    \"type\": \"Suit\",\r\n    \"gender\": \"male\"\r\n}"
+					"raw": "{\r\n    \"price\": 2500,\r\n    \"color\": \"cyan\",\r\n    \"type\": \"Salwar kameez\"\r\n}"
 				},
 				"url": {
-					"raw": "localhost:5000/api/v1/products/2",
+					"raw": "localhost:5000/api/v1/products/5e7758990cfe4b52ec1f1daa",
 					"host": [
 						"localhost"
 					],
@@ -122,7 +122,7 @@
 						"api",
 						"v1",
 						"products",
-						"2"
+						"5e7758990cfe4b52ec1f1daa"
 					]
 				}
 			},
