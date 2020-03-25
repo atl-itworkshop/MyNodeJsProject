@@ -1,5 +1,6 @@
 const express = require("express");
 const dotenv = require("dotenv");
+var cors = require('cors');
 
 // Route files
 const products = require("./routes/products");
@@ -11,6 +12,9 @@ const app = express();
 
 // Body parser
 app.use(express.json());
+
+// Enabling CORS for fron-end browser request
+app.use(cors());
 
 // Mount routers
 app.use("/api/v1/products", products);
