@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const cors = require("cors");
 const colors = require("colors");
 const connectDB = require("./config/db");
 
@@ -17,6 +18,9 @@ const app = express();
 
 // Body parser middleware
 app.use(express.json());
+
+// Enabling CORS for frontend browser request
+app.use(cors());
 
 // Logging middleware
 app.use(morgan("combined"));
