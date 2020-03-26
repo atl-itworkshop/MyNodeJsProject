@@ -2,7 +2,7 @@ const products = [
    {
       _id: "1",
       price: 9201,
-      color: "red",
+      color: "purple",
       type: "T-Shirt",
       gender: "female",
       title: "sit anim Lorem",
@@ -35,10 +35,10 @@ const products = [
    {
       _id: "4",
       price: 2533,
-      color: "red",
+      color: "purple",
       type: "Jumpsuit",
       gender: "female",
-      title: "id consectetur eiusmod",
+      title: "id consectetur",
       company: "silkHouse",
       about:
          "Sunt fugiat culpa labore voluptate ex sunt. Id excepteur commodo in qui ea ad commodo. Labore elit elit esse minim nulla. Occaecat sunt consectetur aliquip occaecat excepteur in labore laboris mollit adipisicing occaecat veniam. Lorem excepteur cillum ea nisi magna id cillum irure.\r\n"
