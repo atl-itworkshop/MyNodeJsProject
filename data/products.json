@@ -1,7 +1,7 @@
 [
    {
       "price": 9201,
-      "color": "red",
+      "color": "blue",
       "type": "T-Shirt",
       "gender": "female",
       "title": "sit anim Lorem",
@@ -21,7 +21,7 @@
    },
    {
       "price": 6471,
-      "color": "white",
+      "color": "purple",
       "type": "Pant",
       "gender": "female",
       "title": "sunt esse Lorem",
@@ -31,10 +31,10 @@
    },
    {
       "price": 2533,
-      "color": "red",
+      "color": "coral",
       "type": "Jumpsuit",
       "gender": "female",
-      "title": "id consectetur eiusmod",
+      "title": "id consectetur",
       "company": "silkHouse",
       "about":
          "Sunt fugiat culpa labore voluptate ex sunt. Id excepteur commodo in qui ea ad commodo. Labore elit elit esse minim nulla. Occaecat sunt consectetur aliquip occaecat excepteur in labore laboris mollit adipisicing occaecat veniam. Lorem excepteur cillum ea nisi magna id cillum irure.\r\n"
