@@ -127,6 +127,298 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "REGISTER a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4a54ccbe-030c-4ccb-9f3b-f86847720124",
+						"exec": [
+							"pm.environment.set(\"TOKEN\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Milton\",\n\t\"lastName\": \"Chandradas\",\n\t\"email\": \"milton@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v2/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"auth",
+						"register"
+					]
+				},
+				"description": "REGISTER a user"
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a397e0b-cd87-4afe-b656-5d15dbd43afc",
+						"exec": [
+							"pm.environment.set(\"TOKEN\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"milton@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v2/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Product Version 2 With Authorization",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"price\": 200,\r\n    \"color\": \"white\",\r\n    \"type\": \"Dress Shirt\",\r\n    \"gender\": \"male\",\r\n    \"title\": \"enim in Lorem\",\r\n    \"company\": \"Dockers\",\r\n    \"about\": \"Et sit laboris duis irure minim aliquip sint ut aliqua velit consectetur magna nisi reprehenderit. Aute sunt dolore excepteur et adipisicing nostrud cillum sint eu amet voluptate in officia ut. Reprehenderit incididunt eu velit ea reprehenderit reprehenderit. Consequat esse fugiat occaecat est adipisicing exercitation. Laborum aliqua irure aliqua ipsum ut magna. Ad ea nulla ipsum quis consequat deserunt id.\\r\\n\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v2/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Product Version 2 With Authorization",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 2500,\r\n    \"color\": \"cyan\",\r\n    \"type\": \"Salwar kameez\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v2/products/5e803e7c6fcb090848cd782b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"products",
+						"5e803e7c6fcb090848cd782b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product Version 2 With Authorization",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v2/products/5e8695e6f400033745ce33c0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"products",
+						"5e8695e6f400033745ce33c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Products Version 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/v2/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Product Version 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/v2/products/5e8695e6f400033745ce33c0",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"products",
+						"5e8695e6f400033745ce33c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGOUT a user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3a397e0b-cd87-4afe-b656-5d15dbd43afc",
+						"exec": [
+							"pm.environment.set(\"TOKEN\", pm.response.json().token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"milton@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/v2/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"v2",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
