@@ -13,6 +13,7 @@ dotenv.config({ path: "./config/config.env" });
 connectDB();
 
 // Route files
+const health = require("./routes/health");
 const products = require("./routes/products");
 const auth = require("./routes/auth");
 const products2 = require("./routes/products2");
@@ -32,6 +33,7 @@ app.use(cors());
 app.use(morgan("combined"));
 
 // Mount routers
+app.use("/api/v1/health", health);
 app.use("/api/v1/products", products);
 app.use("/api/v2/auth", auth);
 app.use("/api/v2/products", products2);
