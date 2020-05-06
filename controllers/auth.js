@@ -1,6 +1,9 @@
 const User = require("../model/User");
+const FbUser = require("../model/FbUser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const fbconfig = require("../config/fbconfig");
+const passport = require("passport");
 
 // @desc    Register a user
 // @route   POST /api/v2/auth/register
@@ -41,6 +44,18 @@ exports.login = async (req, res, next) => {
          .status(401)
          .json({ success: false, message: "Invalid credentials..." });
    }
+
+   sendTokenResponse(user, 200, res);
+};
+
+// @desc    Facebook Authenticate
+// @route   POST /api/v2/auth/facebook
+// @access  public
+exports.facebook = async (req, res, next) => {
+   console.log("Entering auth controller: POST /api/v2/auth/facebook");
+   console.log("req.user", req.user);
+
+   const user = await FbUser.findOne({ id: req.user.id });
 
    sendTokenResponse(user, 200, res);
 };
