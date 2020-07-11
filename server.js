@@ -4,6 +4,13 @@ const morgan = require("morgan");
 const cors = require("cors");
 const colors = require("colors");
 const connectDB = require("./config/db");
+const { ApolloServer } = require('apollo-server-express');
+const { typeDefs, resolvers } = require('./schema.js');
+
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+});
 
 // Load environment variables
 dotenv.config({ path: "./config/config.env" });
@@ -30,4 +37,6 @@ app.use("/api/v1/products", products);
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`.yellow));
+server.applyMiddleware({app});
+
+app.listen(PORT, console.log(`Server running on port ${PORT} - ${server.graphqlPath}`.yellow));
